@@ -1,0 +1,1 @@
+print("Hello Medical AI! My Github jouurney started here")
