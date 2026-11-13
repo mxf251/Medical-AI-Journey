@@ -1,1 +1,1 @@
-print("Hello Medical AI! My Github jouurney started here")
+print("Hello Medical AI! My Github journey started here")
