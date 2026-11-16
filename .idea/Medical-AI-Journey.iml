@@ -2,7 +2,7 @@
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$" />
-    <orderEntry type="jdk" jdkName="Medical-AI-Journey" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="C:\ProgramData\anaconda3\envs\medai_dl" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
