@@ -55,7 +55,7 @@ model = SimpleMedicalCNN()
 criterion = nn.CrossEntropyLoss()
 
 # 优化器（老师）：Adam算法，负责根据错误来修改大脑里的参数，学习率设为0.001
-optimizer = optim.Adam(model.parameters(), lr=0.001)
+optimizer = optim.Adam(model.parameters(), lr=0.0001)
 
 # ================= 4. 开始上课（训练循环） =================
 print("🚀 开始训练！看看 Loss 怎么变化：\n")
@@ -88,8 +88,11 @@ for epoch in range(epochs):
         # 记录当前这一车的误差值
         running_loss += loss.item()
 
-        # 每跑完 4 车（32张图），打印一下当前的误差
-        if (batch_idx + 1) % 4 == 0:
-            print(f"第 {epoch + 1} 轮, 第 {batch_idx + 1} 车 | 当前 Loss (误差): {loss.item():.4f}")
+        # #每跑完 4 车（32张图），打印一下当前的误差
+        #if (batch_idx + 1) % 4 == 0:
+           # print(f"第 {epoch + 1} 轮, 第 {batch_idx + 1} 车 | 当前 Loss (误差): {loss.item():.4f}")
+        # 每轮结束时计算平均 Loss
+    epoch_loss = running_loss / len(train_loader)
+    print(f"🌟 第 {epoch + 1} 轮结束 | 平均 Loss (误差): {epoch_loss:.4f}")    # 每轮结束时计算平均 Loss
 
 print("\n🎉 训练结束！你刚刚完成了 AI 的第一次进化！")
