@@ -3,6 +3,7 @@ import torch.nn as nn
 import torch.optim as optim
 from torchvision import datasets, transforms
 from torch.utils.data import DataLoader
+import random  # 🌟 第一处：新增这一行
 
 # ================= 1. 准备食材（数据和模型） =================
 # 数据路径 (换成你自己的)
@@ -18,7 +19,10 @@ transform = transforms.Compose([
 # 加载数据集
 train_dataset = datasets.ImageFolder(root=data_dir, transform=transform)
 # 为了方便快速看到效果，我们只取前 64 张图来跑（真实训练是取全部）
-small_subset = torch.utils.data.Subset(train_dataset, range(64))
+#small_subset = torch.utils.data.Subset(train_dataset, range(64))
+# 🌟 第二处：改成下面这三行随机抽取
+random_indices = random.sample(range(len(train_dataset)), 64)
+small_subset = torch.utils.data.Subset(train_dataset, random_indices)
 train_loader = DataLoader(small_subset, batch_size=8, shuffle=True)
 
 
