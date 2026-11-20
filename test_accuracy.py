@@ -46,6 +46,14 @@ class SimpleMedicalCNN(nn.Module):
 
 
 model = SimpleMedicalCNN()
+# 🌟 加载我们刚才保存的模型参数
+# 检查文件是否存在，防止报错
+import os
+if os.path.exists("pneumonia_model.pth"):
+    model.load_state_dict(torch.load("pneumonia_model.pth"))
+    print("✅ 成功加载训练好的模型权重！")
+else:
+    print("❌ 没找到模型文件，请先运行 train.py！")
 
 # ================= 3. 开始考试！ =================
 # 🌟 开启考试模式
