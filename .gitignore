@@ -1,0 +1,9 @@
+# 忽略 PyCharm 的本地配置文件夹
+.idea/
+
+# 忽略 Python 编译产生的缓存文件
+__pycache__/
+*.pyc
+
+# 忽略深度学习模型权重文件（因为文件太大，不适合传 GitHub）
+*.pth
